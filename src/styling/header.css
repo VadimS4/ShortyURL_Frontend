@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    background-color: #586f7c;
+    flex-wrap: wrap;
+}
+
+.title {
+    font-size: 4rem;
+}
+
+.description {
+    align-self: center;
+    flex-wrap: wrap;
+}
