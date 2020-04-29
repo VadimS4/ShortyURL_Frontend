@@ -1,0 +1,30 @@
+.converter {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.input {
+    margin-left: 2em;
+    margin-right: 1em;
+    border-radius: 0.5em;
+    height: 2em;
+    width: 40%;
+}
+
+.formButton {
+    height: 2.4em;
+    width: 10em;
+    border-radius: 0.5em;
+}
