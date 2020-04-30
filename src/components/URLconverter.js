@@ -2,7 +2,6 @@ import React from 'react';
 import '../styling/urlconverter.css'
 
 function URLconverter(props) {
-    console.log(props.shortLink)
     return(
         <div className="converter">
             <form className="form" onSubmit={event => props.onFormSubmit(event)}>
@@ -15,7 +14,7 @@ function URLconverter(props) {
                 <button className="formButton">Shrink!</button>
             </form>
             <div className="result">
-                <h2>The short Link is: {props.shortLink}</h2>
+                <h2>The short Link is: <a href={props.shortLink} target="_blank" rel="noopener noreferrer">{props.shortLink}</a></h2>
             </div>
         </div>
     )

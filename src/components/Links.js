@@ -5,6 +5,7 @@ function Links(props) {
 
     return (
         <div className="links">
+            <hr></hr>
             <h1 className="Links">Here's A List Of Your Shortened URL's</h1>
             <div className="links_ul">
                 {!props.links ? null :

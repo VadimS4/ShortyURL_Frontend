@@ -12,6 +12,7 @@ class App extends React.Component {
       links: [],
       current_short_link: ''
     }
+    this.fetchLinks = this.fetchLinks.bind(this)
   }
 
   componentDidMount = () => {
@@ -40,13 +41,13 @@ class App extends React.Component {
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({ original_url : input_url})
     })
-    .then(resp => resp.text())
-    .then(json => {
+    .then(resp => resp.json())
+    .then(json =>{
       this.setState ({
-        current_short_link: json
+        current_short_link: json.shorten,
+        links: json.all
       })
     })
-    .then(this.fetchLinks())
     .catch(error => console.log(error))
   }
 
@@ -56,9 +57,10 @@ class App extends React.Component {
     fetch('http://localhost:3000/delete/' + link.short_url, {
       method: 'DELETE'
     })
-    .then(resp => resp.text())
-    .then(json => console.log(json))
-    .then(this.fetchLinks())
+    .then(resp => resp.json())
+    .then(json => this.setState({
+      links: json.all
+    }))
     .catch(error => console.log(error))
   }
 
