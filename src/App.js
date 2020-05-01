@@ -10,7 +10,8 @@ class App extends React.Component {
     super()
     this.state = {
       links: [],
-      current_short_link: ''
+      current_short_link: '',
+      error_message: ''
     }
     this.fetchLinks = this.fetchLinks.bind(this)
   }
@@ -20,7 +21,7 @@ class App extends React.Component {
   }
 
   fetchLinks = () => {
-    fetch("http://localhost:3000/")
+    fetch("https://shorty--url.herokuapp.com/")
       .then(resp => resp.json())
       .then(json => {
         this.setState({
@@ -36,13 +37,16 @@ class App extends React.Component {
 
     let input_url = event.target[0].value
 
-    fetch('http://localhost:3000/create', {
+    fetch('https://shorty--url.herokuapp.com/create', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({ original_url : input_url})
     })
     .then(resp => resp.json())
     .then(json =>{
+      json.message ? this.setState({
+        error_message: json.message
+      }) :
       this.setState ({
         current_short_link: json.shorten,
         links: json.all
@@ -54,7 +58,7 @@ class App extends React.Component {
   onDeleteButtonClick = (link) => {
     console.log(link.short_url)
 
-    fetch('http://localhost:3000/delete/' + link.short_url, {
+    fetch('https://shorty--url.herokuapp.com/delete/' + link.short_url, {
       method: 'DELETE'
     })
     .then(resp => resp.json())
@@ -70,7 +74,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <URLconverter onFormSubmit={this.onFormSubmit} shortLink={this.state.current_short_link}/>
+        <URLconverter onFormSubmit={this.onFormSubmit} error_message={this.state.error_message} shortLink={this.state.current_short_link}/>
         <Links links={this.state.links} onDeleteButtonClick={this.onDeleteButtonClick}/>
       </div>
     );
