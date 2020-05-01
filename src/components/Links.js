@@ -6,7 +6,7 @@ function Links(props) {
     return (
         <div className="links">
             <hr></hr>
-            <h1 className="Links">Here's A List Of Your Shortened URL's</h1>
+            <h1 className="Links">Here's A List Of Recent Shortened URL's</h1>
             <div className="links_ul">
                 {!props.links ? null :
                     props.links.reverse().map((link, i) => (
@@ -18,7 +18,7 @@ function Links(props) {
                                             Original Url : <a href={`${link.result_url}`}>{link.result_url}</a>
                                         </div>
                                         <div className="result_url">
-                                            Short URL : <a href={`http://localhost:3000/${link.short_url}`} target="_blank" rel="noopener noreferrer">https://shorty.url/{link.short_url}</a>
+                                            Short URL : <a href={`https://shorty--url.herokuapp.com/${link.short_url}`} target="_blank" rel="noopener noreferrer">https://shorty--url.herokuapp.com/{link.short_url}</a>
                                         </div>
                                     </div>
                                     <button className="delete" onClick={() => props.onDeleteButtonClick(link)}>Delete This URL</button>

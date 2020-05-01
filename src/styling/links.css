@@ -18,14 +18,16 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: center;
-    margin-bottom: 2em;
+    margin-top: 2em;
+    margin-bottom: 1em;
 }
 
 .link_li {
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    box-shadow: 1px 1px 5px 3px;
+    box-shadow: 1px 1px 3px 2px;
+    border-radius: 1em;
     width: 95%;
     margin-bottom: 1em;
 }
