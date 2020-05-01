@@ -8,4 +8,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 #### This project was built using a Ruby on Rails backend and a Rails API. The Frontend was built using React. This project utilizes flex box and creates a responsive platform useable on all devices.
 
+At the current moment, in order for the application to work, due to the nature of the API fetch requests, CORS needs to be disabled. I use a Google Chrome extension called Moesif CORS.
+
 Built by Vadim Stakhnyuk
