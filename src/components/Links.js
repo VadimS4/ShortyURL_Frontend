@@ -15,7 +15,7 @@ function Links(props) {
                                 <li className="link_li">
                                     <div className="urls">
                                         <div className="original_url">
-                                            Original Url : <a href={`${link.result_url}`}>{link.result_url}</a>
+                                            Original Url : <a href={`${link.original_url}`} target="_blank" rel="noopener noreferrer">{link.original_url}</a>
                                         </div>
                                         <div className="result_url">
                                             Short URL : <a href={`https://shorty--url.herokuapp.com/${link.short_url}`} target="_blank" rel="noopener noreferrer">https://shorty--url.herokuapp.com/{link.short_url}</a>

@@ -19,7 +19,7 @@ function URLconverter(props) {
                 <button className="formButton">Shrink!</button>
             </form>
             <div className="result">
-                {props.error_message !== "" && props.shortLink === "" ? <h2>{props.error_message}</h2> :
+                {props.error_message ? <h2>{props.error_message}</h2> :
                     <h2>The short Link is: <a href={short_link} target="_blank" rel="noopener noreferrer">{short_link}</a></h2>
                 }
             </div>
