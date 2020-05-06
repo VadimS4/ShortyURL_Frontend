@@ -44,6 +44,7 @@ class App extends React.Component {
     })
     .then(resp => resp.json())
     .then(json =>{
+      console.log(json)
       json.message ? this.setState({
         error_message: json.message
       }) :
